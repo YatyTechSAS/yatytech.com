@@ -1,0 +1,491 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+}
+
+/* =========================
+   NAVBAR BASE
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 48px;
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-logo img {
+  width: 70px;
+  height: auto;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff7a18;
+}
+
+.brand2 {
+  color: #0b2c5d;
+}
+
+/* =========================
+   LINKS DESKTOP
+========================= */
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #0b2c5d;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover elegante */
+.nav-links a:hover {
+  color: #ff7a18;
+  transform: translateY(-3px);
+}
+
+/* Activo */
+.nav-links li.active a {
+  font-weight: 700;
+}
+
+/* Punto activo */
+.nav-links li.active::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #ff7a18;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+}
+
+/* =========================
+   BOTÓN DESKTOP
+========================= */
+
+.nav-btn {
+  background: #ff7a18;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 122, 24, 0.2);
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger .material-symbols-outlined {
+  font-size: 32px;
+  color: #0b2c5d;
+  transition: 0.3s ease;
+}
+
+/* =========================
+   VISIBILIDAD
+========================= */
+
+.desktop-only {
+  display: inline-block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.mobile-contact {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding: 12px 24px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .nav-logo img {
+    width: 50px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  /* MENU MOBILE */
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: right 0.35s ease;
+  }
+
+  /* CUANDO SE ABRE */
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  /* Botón dentro del menú mobile */
+  .mobile-contact {
+    display: block;
+    margin-top: 20px;
+  }
+
+  /* 🔥 CORRECCIÓN DE ESPECIFICIDAD */
+  .nav-links .nav-btn-mobile {
+    background: #ff7a18;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .nav-links .nav-btn-mobile:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 122, 24, 0.2);
+  }
+
+}
+
+
+/* SECCIONES */
+.section {
+  min-height: 100vh;
+  padding: 120px 48px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0b2c5d;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #f5f3ee;
+  padding: 0 8%;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+/* TEXT */
+.hero-text h1 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.hero-text h1 span {
+  color: #f97316; /* naranja del logo */
+}
+
+.hero-text p {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 520px;
+  margin-bottom: 35px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #0f172a;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #020617;
+}
+
+.btn-secondary {
+  border: 2px solid #0f172a;
+  color: #0f172a;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* IMAGE */
+.hero-image img {
+  width: 100%;
+  max-width: 520px;
+  display: block;
+  margin: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    transform: none;
+  }
+
+  /* Ajuste para el efecto hover en móvil */
+  .nav-links a:hover {
+    transform: none;
+  }
+}
+
+/* FOOTER */
+.footer {
+  background: #fff;
+  padding: 80px 48px 40px;
+  border-top: 1px solid #eee;
+}
+
+/* GRID */
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* BRAND */
+.footer-logo {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #9a9a9a;
+  line-height: 1.7;
+}
+
+/* COLUMNAS */
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #9a9a9a;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 14px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.newsletter input {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 6px 0;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.newsletter button {
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter button {
+    margin-top: 10px;
+  }
+}
