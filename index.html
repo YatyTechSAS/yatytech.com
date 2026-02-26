@@ -1,134 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YatyTech</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YatyTech</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-</head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="img/logo.jpg" alt="YatyTech logo" />
+        <span class="brand"> Yaty<span class="brand2">Tech</span> </span>
+      </div>
 
-<body>
+      <ul class="nav-links">
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
 
-  <nav class="navbar">
-    <div class="nav-logo">
-      <img src="img/logo.jpg" alt="YatyTech logo">
-      <span class="brand">
-        Yaty<span class="brand2">Tech</span>
-      </span>
+        <!-- Contact en móvil -->
+        <li class="mobile-contact">
+          <a href="#contact" class="nav-btn-mobile">Contact Us</a>
+        </li>
+      </ul>
+
+      <!-- Botón desktop -->
+      <a href="#contact" class="nav-btn desktop-only">Contact Us</a>
+
+      <!-- Hamburger -->
+      <div class="hamburger mobile-only">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
+    </nav>
+
+    <!-- SECCIONES -->
+    <section id="home" class="hero">
+      <!-- VIDEO DE FONDO -->
+      <video class="hero-bg" autoplay muted loop playsinline>
+        <source src="video/hero2.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Desarrollamos <span>software</span> que impulsa tu negocio</h1>
+
+          <p>
+            Creamos soluciones digitales a medida: desarrollo web, sistemas
+            empresariales y automatización tecnológica para empresas que quieren
+            crecer.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Solicitar cotización</a>
+            <a href="#services" class="btn-secondary">Ver servicios</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="clients">
+      <div class="clients-container">
+        <p class="clients-title">Empresas que confían en nosotros</p>
+
+        <div class="clients-logos fade-in">
+          <img src="img/OTMLOGO.png" alt="Empresa 1" />
+          <img src="img/SERPORTLOGO.webp" alt="Empresa 2" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="services-header">
+        <h2>Nuestros Servicios</h2>
+        <p>Soluciones digitales diseñadas para escalar tu negocio</p>
+      </div>
+
+      <div class="services-container">
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined">code</span>
+          </div>
+          <h3>Desarrollo Web</h3>
+          <p>
+            Creamos plataformas modernas, rápidas y optimizadas para generar
+            resultados reales.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined">dns</span>
+          </div>
+          <h3>Sistemas Empresariales</h3>
+          <p>
+            Software a medida para automatizar procesos y mejorar la eficiencia
+            operativa.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined">auto_awesome</span>
+          </div>
+          <h3>Automatización & IA</h3>
+          <p>
+            Implementamos soluciones inteligentes que optimizan tiempo y
+            recursos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="products-bg">
+        <canvas id="networkCanvas"></canvas>
+      </div>
+
+      <div class="products-container">
+        <div class="products-header">
+          <p class="products-label">Nuestros Productos</p>
+          <h2>Soluciones diseñadas para escalar</h2>
+        </div>
+
+        <div class="products-grid">
+          <!-- IGOR -->
+          <div class="product-card">
+            <div class="product-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+            <h3>IGOR</h3>
+            <p>
+              Plataforma de desarrollo y automatización de software enfocada en
+              optimizar procesos y escalar operaciones empresariales.
+            </p>
+            <a href="#" class="product-link">Descubrir más →</a>
+          </div>
+
+          <!-- SmartQuery -->
+          <div class="product-card">
+            <div class="product-icon">
+              <i data-lucide="bar-chart-3"></i>
+            </div>
+            <h3>SmartQuery</h3>
+            <p>
+              Sistema inteligente de análisis y visualización de datos.
+              Convierte información compleja en decisiones estratégicas.
+            </p>
+            <a href="#" class="product-link">Descubrir más →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+
+  <div class="about-container">
+
+    <!-- HEADER -->
+    <div class="about-header">
+      <p class="about-label">Sobre Nosotros</p>
+      <h2>Construimos tecnología con visión de largo plazo</h2>
     </div>
 
-    <ul class="nav-links">
-      <li class="active"><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#about">About</a></li>
-
-      <!-- Contact en móvil -->
-      <li class="mobile-contact">
-        <a href="#contact" class="nav-btn-mobile">Contact Us</a>
-      </li>
-    </ul>
-
-    <!-- Botón desktop -->
-    <a href="#contact" class="nav-btn desktop-only">Contact Us</a>
-
-    <!-- Hamburger -->
-    <div class="hamburger mobile-only">
-      <span class="material-symbols-outlined">menu</span>
+    <!-- TEXTO -->
+    <div class="about-content">
+      <p class="about-text">
+        En YatyTech desarrollamos soluciones digitales enfocadas en rendimiento,
+        escalabilidad y automatización. Nuestra misión es transformar procesos
+        empresariales mediante ingeniería sólida y pensamiento estratégico.
+      </p>
     </div>
-  </nav>
+
+<div class="about-metrics">
+
+  <div class="metric">
+    <h3><span class="counter" data-target="25">0</span>+</h3>
+    <p>Proyectos entregados</p>
+  </div>
+
+  <div class="metric">
+    <h3><span class="counter" data-target="12">0</span>+</h3>
+    <p>Empresas impactadas</p>
+  </div>
+
+  <div class="metric">
+    <h3><span class="counter" data-target="98">0</span>%</h3>
+    <p>Satisfacción de clientes</p>
+  </div>
+
+  <div class="metric">
+    <h3><span class="counter" data-target="2">0</span></h3>
+    <p>Productos propios</p>
+  </div>
+
+</div>
 
 
-  <!-- SECCIONES -->
-  <section id="home" class="hero">
-    <div class="hero-container">
 
-      <div class="hero-text">
-        <h1>
-          Desarrollamos <span>software</span> que impulsa tu negocio
-        </h1>
+    <!-- TIMELINE -->
+    <div class="about-timeline">
 
-        <p>
-          Creamos soluciones digitales a medida: desarrollo web, sistemas empresariales
-          y automatización tecnológica para empresas que quieren crecer.
-        </p>
+      <div class="timeline-item">
+        <span class="timeline-year">2023</span>
+        <p>Fundación de YatyTech y primeros proyectos tecnológicos.</p>
+      </div>
 
-        <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">Solicitar cotización</a>
-          <a href="#services" class="btn-secondary">Ver servicios</a>
+      <div class="timeline-item">
+        <span class="timeline-year">2024</span>
+        <p>Expansión hacia desarrollo de soluciones empresariales personalizadas.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2025</span>
+        <p>Lanzamiento de productos propios: SmartQuery e IGOR.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="faq" class="faq-section">
+  <div class="faq-container">
+
+    <div class="faq-header">
+      <h2>Preguntas Frecuentes</h2>
+      <p>Resolvemos las dudas más comunes sobre nuestros servicios y procesos.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué tipo de proyectos desarrollan?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Desarrollamos aplicaciones web, software a medida, automatización de procesos y soluciones con inteligencia artificial adaptadas a cada empresa.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Trabajan solo en Cartagena?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>No. Somos un equipo remote-first y trabajamos con empresas en cualquier parte de Colombia y Latinoamérica.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Cuánto tiempo tarda un proyecto?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Depende del alcance. Un MVP puede tardar entre 4 y 8 semanas. Proyectos más complejos pueden tomar entre 2 y 4 meses.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Ofrecen soporte después de entregar el proyecto?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Sí. Ofrecemos mantenimiento, optimización continua y mejoras evolutivas según las necesidades de tu negocio.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <section class="contact" id="contact">
+  <div class="contact-container">
+
+    <div class="contact-glass">
+
+      <div class="contact-header">
+        <h2>Hablemos.</h2>
+        <p>Construyamos algo extraordinario juntos.</p>
+      </div>
+
+      <form class="contact-form">
+
+        <div class="input-group">
+          <input type="text" required>
+          <label>Nombre</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+
+        <div class="input-group">
+          <textarea rows="4" required></textarea>
+          <label>Cuéntanos sobre tu proyecto</label>
+        </div>
+
+        <button type="submit" class="btn-premium">
+          Enviar mensaje
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <h2 class="footer-logo">
+            <span class="brand">Yaty<span class="brand2">Tech</span>.</span>
+          </h2>
+          <p>
+            Plan 554, Manzana 88, Lote 12<br />
+            Barrio Socorro<br />
+            Cartagena, Bolívar
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Help -->
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Payment Options</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Privacy Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <form class="newsletter">
+            <input type="email" placeholder="Enter Your Email Address" />
+            <button type="submit">SUBSCRIBE</button>
+          </form>
         </div>
       </div>
 
-      <div class="hero-image">
-        <img src="img/hero.png" alt="Software development illustration">
+      <!-- BOTÓN WHATSAPP PREMIUM -->
+      <a
+        href="https://wa.me/573043894938?text=Hola,%20me%20gustaría%20solicitar%20una%20cita%20con%20ustedes"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="Chat en WhatsApp"
+      >
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
+          <path
+            d="M16.04 2C8.82 2 3 7.82 3 15.04c0 2.65.78 5.13 2.12 7.21L3 30l7.94-2.08a12.94 12.94 0 005.1 1.02c7.22 0 13.04-5.82 13.04-13.04S23.26 2 16.04 2zm0 23.6c-1.7 0-3.36-.44-4.83-1.26l-.34-.2-4.72 1.24 1.26-4.6-.22-.36a10.55 10.55 0 01-1.62-5.62c0-5.85 4.77-10.62 10.62-10.62s10.62 4.77 10.62 10.62-4.77 10.62-10.62 10.62zm5.83-7.97c-.32-.16-1.88-.93-2.17-1.04-.3-.11-.52-.16-.74.16s-.85 1.04-1.04 1.25c-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.74-1.78-1.01-2.44-.27-.64-.55-.55-.74-.56-.19-.01-.4-.01-.61-.01-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.09 1.31 3.31.16.21 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.88-.77 2.15-1.51.27-.74.27-1.37.19-1.51-.08-.14-.29-.21-.61-.37z"
+          />
+        </svg>
+      </a>
+
+      <div class="footer-bottom">
+        <p>© 2026 YatyTech. All rights reverved</p>
       </div>
+    </footer>
 
-    </div>
-  </section>
-
-  <section id="services" class="section">Services</section>
-  <section id="pricing" class="section">Pricing</section>
-  <section id="about" class="section">About</section>
-  <section id="contact" class="section">Contact</section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
-
-      <!-- Brand -->
-      <div class="footer-brand">
-        <h2 class="footer-logo">
-          <span class="brand">Yaty<span class="brand2">Tech</span>.</span>
-        </h2>
-        <p>
-          Plan 554, Manzana 88, Lote 12<br>
-          Barrio Socorro<br>
-          Cartagena, Bolívar
-        </p>
-      </div>
-
-      <!-- Links -->
-      <div class="footer-col">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Help -->
-      <div class="footer-col">
-        <h4>Help</h4>
-        <ul>
-          <li><a href="#">Payment Options</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Privacy Policies</a></li>
-        </ul>
-      </div>
-
-      <!-- Newsletter -->
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <form class="newsletter">
-          <input type="email" placeholder="Enter Your Email Address">
-          <button type="submit">SUBSCRIBE</button>
-        </form>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 YatyTech. All rights reverved</p>
-    </div>
-  </footer>
-
-
-  <!-- JS -->
-  <script src="main.js"></script>
-</body>
-
+    <!-- JS -->
+    <script src="main.js"></script>
+  </body>
 </html>
