@@ -1,89 +1,152 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YatyTech</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
 
+  <title>YatyTech</title>
+  <meta name="description"
+        content="YatyTech develops custom software: web development, automation, and scalable enterprise solutions." />
+
+  <!-- ✅ CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- ✅ Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ✅ Poppins: non-blocking + swap -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- ✅ Material Symbols: non-blocking -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+    />
+  </noscript>
+
+  <!-- ✅ Lucide -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- ✅ Your JS -->
+  <script src="main.js" defer></script>
 </head>
 
 <body>
   <nav class="navbar">
+    <!-- LOGO -->
     <div class="nav-logo">
       <img src="img/logo.jpg" alt="YatyTech logo" />
-      <span class="brand"> Yaty<span class="brand2">Tech</span> </span>
+      <span class="brand">Yaty<span class="brand2">Tech</span></span>
     </div>
 
+    <!-- LINKS -->
     <ul class="nav-links">
-      <li class="active"><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#about">About</a></li>
+      <li class="active"><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
+      <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+      <li><a href="#products" data-en="Products" data-es="Productos">Products</a></li>
+      <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
 
-      <!-- Contact en móvil -->
+      <!-- Contact in mobile menu -->
       <li class="mobile-contact">
-        <a href="#contact" class="nav-btn-mobile">Contact Us</a>
+        <a href="#contact" class="nav-btn-mobile" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
       </li>
     </ul>
 
-    <!-- Botón desktop -->
-    <a href="#contact" class="nav-btn desktop-only">Contact Us</a>
+    <!-- RIGHT SIDE -->
+    <div class="nav-right">
+      <!-- Language selector -->
+      <div class="lang-switch" aria-label="Language selector">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-separator">/</span>
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+      </div>
 
-    <!-- Hamburger -->
-    <div class="hamburger mobile-only">
-      <span class="material-symbols-outlined">menu</span>
+      <!-- Desktop button -->
+      <a href="#contact" class="nav-btn desktop-only" data-en="Contact Us" data-es="Contact Us">Contact Us</a>
+
+      <!-- Hamburger -->
+      <div class="hamburger mobile-only">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
     </div>
   </nav>
 
-  <!-- SECCIONES -->
+  <!-- HERO -->
   <section id="home" class="hero">
-    <!-- VIDEO DE FONDO -->
     <video class="hero-bg" autoplay muted loop playsinline>
       <source src="video/hero2.mp4" type="video/mp4" />
     </video>
 
     <div class="hero-container">
       <div class="hero-text">
-        <h1>Desarrollamos <span>software</span> que impulsa tu negocio</h1>
+        <h1
+          data-en='We develop <span>software</span> that drives your business'
+          data-es='Desarrollamos <span>software</span> que impulsa tu negocio'
+        >
+          We develop <span>software</span> that drives your business
+        </h1>
 
-        <p>
-          Creamos soluciones digitales a medida: desarrollo web, sistemas
-          empresariales y automatización tecnológica para empresas que quieren
-          crecer.
+        <p
+          data-en="We create custom digital solutions: web development, enterprise systems and automation for companies ready to grow."
+          data-es="Creamos soluciones digitales a medida: desarrollo web, sistemas empresariales y automatización tecnológica para empresas que quieren crecer."
+        >
+          We create custom digital solutions: web development, enterprise systems and automation for companies ready to grow.
         </p>
 
         <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">Solicitar cotización</a>
-          <a href="#services" class="btn-secondary">Ver servicios</a>
+          <a href="#contact" class="btn-primary" data-en="Request a quote" data-es="Solicitar cotización">
+            Request a quote
+          </a>
+          <a href="#services" class="btn-secondary" data-en="View services" data-es="Ver servicios">
+            View services
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CLIENTS -->
   <section class="clients">
     <div class="clients-container">
-      <p class="clients-title">Empresas que confían en nosotros</p>
+      <p class="clients-title" data-en="Companies that trust us" data-es="Empresas que confían en nosotros">
+        Companies that trust us
+      </p>
 
       <div class="clients-logos fade-in">
-        <img src="img/OTMLOGO.png" alt="Empresa 1" />
-        <img src="img/SERPORTLOGO.webp" alt="Empresa 2" />
+        <img src="img/OTMLOGO.png" alt="Company 1" />
+        <img src="img/SERPORTLOGO.webp" alt="Company 2" />
       </div>
     </div>
   </section>
 
+  <!-- SERVICES -->
   <section id="services" class="services">
     <div class="services-header">
-      <h2>Nuestros Servicios</h2>
-      <p>Soluciones digitales diseñadas para escalar tu negocio</p>
+      <h2 data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+      <p data-en="Digital solutions designed to scale your business" data-es="Soluciones digitales diseñadas para escalar tu negocio">
+        Digital solutions designed to scale your business
+      </p>
     </div>
 
     <div class="services-container">
@@ -91,10 +154,12 @@
         <div class="icon-wrapper">
           <span class="material-symbols-outlined">code</span>
         </div>
-        <h3>Desarrollo Web</h3>
-        <p>
-          Creamos plataformas modernas, rápidas y optimizadas para generar
-          resultados reales.
+        <h3 data-en="Web Development" data-es="Desarrollo Web">Web Development</h3>
+        <p
+          data-en="We build modern, fast and optimized platforms that generate real results."
+          data-es="Creamos plataformas modernas, rápidas y optimizadas para generar resultados reales."
+        >
+          We build modern, fast and optimized platforms that generate real results.
         </p>
       </div>
 
@@ -102,10 +167,12 @@
         <div class="icon-wrapper">
           <span class="material-symbols-outlined">dns</span>
         </div>
-        <h3>Sistemas Empresariales</h3>
-        <p>
-          Software a medida para automatizar procesos y mejorar la eficiencia
-          operativa.
+        <h3 data-en="Enterprise Systems" data-es="Sistemas Empresariales">Enterprise Systems</h3>
+        <p
+          data-en="Custom software to automate processes and improve operational efficiency."
+          data-es="Software a medida para automatizar procesos y mejorar la eficiencia operativa."
+        >
+          Custom software to automate processes and improve operational efficiency.
         </p>
       </div>
 
@@ -113,15 +180,18 @@
         <div class="icon-wrapper">
           <span class="material-symbols-outlined">auto_awesome</span>
         </div>
-        <h3>Automatización & IA</h3>
-        <p>
-          Implementamos soluciones inteligentes que optimizan tiempo y
-          recursos.
+        <h3 data-en="Automation & AI" data-es="Automatización & IA">Automation & AI</h3>
+        <p
+          data-en="We implement intelligent solutions that optimize time and resources."
+          data-es="Implementamos soluciones inteligentes que optimizan tiempo y recursos."
+        >
+          We implement intelligent solutions that optimize time and resources.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- PRODUCTS -->
   <section id="products" class="products">
     <div class="products-bg">
       <canvas id="networkCanvas"></canvas>
@@ -129,8 +199,10 @@
 
     <div class="products-container">
       <div class="products-header">
-        <p class="products-label">Nuestros Productos</p>
-        <h2>Soluciones diseñadas para escalar</h2>
+        <p class="products-label" data-en="Our Products" data-es="Nuestros Productos">Our Products</p>
+        <h2 data-en="Solutions designed to scale" data-es="Soluciones diseñadas para escalar">
+          Solutions designed to scale
+        </h2>
       </div>
 
       <div class="products-grid">
@@ -140,11 +212,13 @@
             <i data-lucide="code-2"></i>
           </div>
           <h3>IGOR</h3>
-          <p>
-            Plataforma de desarrollo y automatización de software enfocada en
-            optimizar procesos y escalar operaciones empresariales.
+          <p
+            data-en="Software development and automation platform focused on optimizing processes and scaling business operations."
+            data-es="Plataforma de desarrollo y automatización de software enfocada en optimizar procesos y escalar operaciones empresariales."
+          >
+            Software development and automation platform focused on optimizing processes and scaling business operations.
           </p>
-          <a href="#" class="product-link">Descubrir más →</a>
+          <a href="#" class="product-link" data-en="Learn more →" data-es="Descubrir más →">Learn more →</a>
         </div>
 
         <!-- SmartQuery -->
@@ -153,184 +227,204 @@
             <i data-lucide="bar-chart-3"></i>
           </div>
           <h3>SmartQuery</h3>
-          <p>
-            Sistema inteligente de análisis y visualización de datos.
-            Convierte información compleja en decisiones estratégicas.
+          <p
+            data-en="Intelligent system for data analysis and visualization. Turns complex information into strategic decisions."
+            data-es="Sistema inteligente de análisis y visualización de datos. Convierte información compleja en decisiones estratégicas."
+          >
+            Intelligent system for data analysis and visualization. Turns complex information into strategic decisions.
           </p>
-          <a href="#" class="product-link">Descubrir más →</a>
+          <a href="#" class="product-link" data-en="Learn more →" data-es="Descubrir más →">Learn more →</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about" class="about">
-
     <div class="about-container">
-
-      <!-- HEADER -->
       <div class="about-header">
-        <p class="about-label">Sobre Nosotros</p>
-        <h2>Construimos tecnología con visión de largo plazo</h2>
+        <p class="about-label" data-en="About Us" data-es="Sobre Nosotros">About Us</p>
+        <h2 data-en="We build technology with a long-term vision" data-es="Construimos tecnología con visión de largo plazo">
+          We build technology with a long-term vision
+        </h2>
       </div>
 
-      <!-- TEXTO -->
       <div class="about-content">
-        <p class="about-text">
-          En YatyTech desarrollamos soluciones digitales enfocadas en rendimiento,
-          escalabilidad y automatización. Nuestra misión es transformar procesos
-          empresariales mediante ingeniería sólida y pensamiento estratégico.
+        <p
+          class="about-text"
+          data-en="At YatyTech we develop digital solutions focused on performance, scalability and automation. Our mission is to transform business processes through solid engineering and strategic thinking."
+          data-es="En YatyTech desarrollamos soluciones digitales enfocadas en rendimiento, escalabilidad y automatización. Nuestra misión es transformar procesos empresariales mediante ingeniería sólida y pensamiento estratégico."
+        >
+          At YatyTech we develop digital solutions focused on performance, scalability and automation. Our mission is to transform business processes through solid engineering and strategic thinking.
         </p>
       </div>
 
       <div class="about-metrics">
-
         <div class="metric">
           <h3><span class="counter" data-target="25">0</span>+</h3>
-          <p>Proyectos entregados</p>
+          <p data-en="Projects delivered" data-es="Proyectos entregados">Projects delivered</p>
         </div>
 
         <div class="metric">
           <h3><span class="counter" data-target="12">0</span>+</h3>
-          <p>Empresas impactadas</p>
+          <p data-en="Companies impacted" data-es="Empresas impactadas">Companies impacted</p>
         </div>
 
         <div class="metric">
           <h3><span class="counter" data-target="98">0</span>%</h3>
-          <p>Satisfacción de clientes</p>
+          <p data-en="Client satisfaction" data-es="Satisfacción de clientes">Client satisfaction</p>
         </div>
 
         <div class="metric">
           <h3><span class="counter" data-target="2">0</span></h3>
-          <p>Productos propios</p>
+          <p data-en="In-house products" data-es="Productos propios">In-house products</p>
         </div>
-
       </div>
 
-
-
-      <!-- TIMELINE -->
       <div class="about-timeline">
-
         <div class="timeline-item">
           <span class="timeline-year">2023</span>
-          <p>Fundación de YatyTech y primeros proyectos tecnológicos.</p>
+          <p data-en="YatyTech founded and first technology projects delivered."
+             data-es="Fundación de YatyTech y primeros proyectos tecnológicos.">
+            YatyTech founded and first technology projects delivered.
+          </p>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-year">2024</span>
-          <p>Expansión hacia desarrollo de soluciones empresariales personalizadas.</p>
+          <p data-en="Expansion into custom enterprise solutions."
+             data-es="Expansión hacia desarrollo de soluciones empresariales personalizadas.">
+            Expansion into custom enterprise solutions.
+          </p>
         </div>
 
         <div class="timeline-item">
           <span class="timeline-year">2025</span>
-          <p>Lanzamiento de productos propios: SmartQuery e IGOR.</p>
+          <p data-en="Launch of in-house products: SmartQuery and IGOR."
+             data-es="Lanzamiento de productos propios: SmartQuery e IGOR.">
+            Launch of in-house products: SmartQuery and IGOR.
+          </p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
+  <!-- FAQ -->
   <section id="faq" class="faq-section">
     <div class="faq-container">
-
       <div class="faq-header">
-        <h2>Preguntas Frecuentes</h2>
-        <p>Resolvemos las dudas más comunes sobre nuestros servicios y procesos.</p>
+        <h2 data-en="Frequently Asked Questions" data-es="Preguntas Frecuentes">Frequently Asked Questions</h2>
+        <p
+          data-en="We answer the most common questions about our services and process."
+          data-es="Resolvemos las dudas más comunes sobre nuestros servicios y procesos."
+        >
+          We answer the most common questions about our services and process.
+        </p>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          ¿Qué tipo de proyectos desarrollan?
+        <button class="faq-question" data-en="What kind of projects do you build?" data-es="¿Qué tipo de proyectos desarrollan?">
+          What kind of projects do you build?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Desarrollamos aplicaciones web, software a medida, automatización de procesos y soluciones con inteligencia
-            artificial adaptadas a cada empresa.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          ¿Trabajan solo en Cartagena?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <p>No. Somos un equipo remote-first y trabajamos con empresas en cualquier parte de Colombia y Latinoamérica.
+          <p
+            data-en="We build web apps, custom software, process automation and AI solutions tailored to each business."
+            data-es="Desarrollamos aplicaciones web, software a medida, automatización de procesos y soluciones con inteligencia artificial adaptadas a cada empresa."
+          >
+            We build web apps, custom software, process automation and AI solutions tailored to each business.
           </p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          ¿Cuánto tiempo tarda un proyecto?
+        <button class="faq-question" data-en="Do you work only in Cartagena?" data-es="¿Trabajan solo en Cartagena?">
+          Do you work only in Cartagena?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Depende del alcance. Un MVP puede tardar entre 4 y 8 semanas. Proyectos más complejos pueden tomar entre 2
-            y 4 meses.</p>
+          <p
+            data-en="No. We're a remote-first team and work with companies across Colombia and Latin America."
+            data-es="No. Somos un equipo remote-first y trabajamos con empresas en cualquier parte de Colombia y Latinoamérica."
+          >
+            No. We're a remote-first team and work with companies across Colombia and Latin America.
+          </p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">
-          ¿Ofrecen soporte después de entregar el proyecto?
+        <button class="faq-question" data-en="How long does a project take?" data-es="¿Cuánto tiempo tarda un proyecto?">
+          How long does a project take?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Sí. Ofrecemos mantenimiento, optimización continua y mejoras evolutivas según las necesidades de tu
-            negocio.</p>
+          <p
+            data-en="It depends on scope. An MVP can take 4–8 weeks. More complex projects can take 2–4 months."
+            data-es="Depende del alcance. Un MVP puede tardar entre 4 y 8 semanas. Proyectos más complejos pueden tomar entre 2 y 4 meses."
+          >
+            It depends on scope. An MVP can take 4–8 weeks. More complex projects can take 2–4 months.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" data-en="Do you offer support after delivery?" data-es="¿Ofrecen soporte después de entregar el proyecto?">
+          Do you offer support after delivery?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p
+            data-en="Yes. We offer maintenance, continuous optimization and iterative improvements based on your needs."
+            data-es="Sí. Ofrecemos mantenimiento, optimización continua y mejoras evolutivas según las necesidades de tu negocio."
+          >
+            Yes. We offer maintenance, continuous optimization and iterative improvements based on your needs.
+          </p>
         </div>
       </div>
 
     </div>
   </section>
 
-
+  <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-container">
-
       <div class="contact-glass">
-
         <div class="contact-header">
-          <h2>Hablemos.</h2>
-          <p>Construyamos algo extraordinario juntos.</p>
+          <h2 data-en="Let's talk." data-es="Hablemos.">Let's talk.</h2>
+          <p data-en="Let's build something extraordinary together." data-es="Construyamos algo extraordinario juntos.">
+            Let's build something extraordinary together.
+          </p>
         </div>
 
         <form class="contact-form">
-
           <div class="input-group">
-            <input type="text" required>
-            <label>Nombre</label>
+            <input type="text" required />
+            <label data-en="Name" data-es="Nombre">Name</label>
           </div>
 
           <div class="input-group">
-            <input type="email" required>
-            <label>Email</label>
+            <input type="email" required />
+            <label data-en="Email" data-es="Email">Email</label>
           </div>
 
           <div class="input-group">
             <textarea rows="4" required></textarea>
-            <label>Cuéntanos sobre tu proyecto</label>
+            <label data-en="Tell us about your project" data-es="Cuéntanos sobre tu proyecto">
+              Tell us about your project
+            </label>
           </div>
 
-          <button type="submit" class="btn-premium">
-            Enviar mensaje
+          <button type="submit" class="btn-premium" data-en="Send message" data-es="Enviar mensaje">
+            Send message
           </button>
-
         </form>
-
       </div>
-
     </div>
   </section>
-
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
-      <!-- Brand -->
       <div class="footer-brand">
         <h2 class="footer-logo">
           <span class="brand">Yaty<span class="brand2">Tech</span>.</span>
@@ -342,40 +436,37 @@
         </p>
       </div>
 
-      <!-- Links -->
       <div class="footer-col">
-        <h4>Links</h4>
+        <h4 data-en="Links" data-es="Links">Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
+          <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+          <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+          <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Help -->
       <div class="footer-col">
-        <h4>Help</h4>
+        <h4 data-en="Help" data-es="Ayuda">Help</h4>
         <ul>
-          <li><a href="#">Payment Options</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Privacy Policies</a></li>
+          <li><a href="#" data-en="Payment Options" data-es="Opciones de pago">Payment Options</a></li>
+          <li><a href="#" data-en="Returns" data-es="Devoluciones">Returns</a></li>
+          <li><a href="#" data-en="Privacy Policies" data-es="Políticas de privacidad">Privacy Policies</a></li>
         </ul>
       </div>
 
-      <!-- Newsletter -->
       <div class="footer-col">
-        <h4>Newsletter</h4>
+        <h4 data-en="Newsletter" data-es="Boletín">Newsletter</h4>
         <form class="newsletter">
-          <input type="email" placeholder="Enter Your Email Address" />
-          <button type="submit">SUBSCRIBE</button>
+          <input type="email" placeholder="Enter your email address" data-en="Enter your email address" data-es="Ingresa tu correo" />
+          <button type="submit" data-en="SUBSCRIBE" data-es="SUSCRIBIRSE">SUBSCRIBE</button>
         </form>
       </div>
     </div>
 
-    <!-- BOTÓN WHATSAPP PREMIUM -->
-    <a href="https://wa.me/573043894938?text=Hola,%20me%20gustaría%20solicitar%20una%20cita%20con%20ustedes"
-      class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/573043894938?text=Hello,%20I'd%20like%20to%20request%20an%20appointment%20with%20you"
+       class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
         <path
           d="M16.04 2C8.82 2 3 7.82 3 15.04c0 2.65.78 5.13 2.12 7.21L3 30l7.94-2.08a12.94 12.94 0 005.1 1.02c7.22 0 13.04-5.82 13.04-13.04S23.26 2 16.04 2zm0 23.6c-1.7 0-3.36-.44-4.83-1.26l-.34-.2-4.72 1.24 1.26-4.6-.22-.36a10.55 10.55 0 01-1.62-5.62c0-5.85 4.77-10.62 10.62-10.62s10.62 4.77 10.62 10.62-4.77 10.62-10.62 10.62zm5.83-7.97c-.32-.16-1.88-.93-2.17-1.04-.3-.11-.52-.16-.74.16s-.85 1.04-1.04 1.25c-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.74-1.78-1.01-2.44-.27-.64-.55-.55-.74-.56-.19-.01-.4-.01-.61-.01-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.09 1.31 3.31.16.21 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.88-.77 2.15-1.51.27-.74.27-1.37.19-1.51-.08-.14-.29-.21-.61-.37z" />
@@ -383,12 +474,10 @@
     </a>
 
     <div class="footer-bottom">
-      <p>© 2026 YatyTech. All rights reverved</p>
+      <p data-en="© 2026 YatyTech. All rights reserved" data-es="© 2026 YatyTech. Todos los derechos reservados">
+        © 2026 YatyTech. All rights reserved
+      </p>
     </div>
   </footer>
-
-  <!-- JS -->
-  <script src="main.js"></script>
 </body>
-
 </html>
