@@ -335,3 +335,110 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
+
+(function () {
+      const root = document.documentElement;
+      const langBtns = document.querySelectorAll(".lang-btn");
+
+      function setLang(lang) {
+        root.setAttribute("data-lang", lang);
+        document.querySelectorAll("[data-en]").forEach(el => {
+          // For inputs use placeholder
+          if (el.tagName === "INPUT" && el.hasAttribute("placeholder")) {
+            el.placeholder = el.getAttribute(`data-${lang}`) || el.placeholder;
+          } else if (el.tagName === "TEXTAREA" && el.hasAttribute("placeholder")) {
+            el.placeholder = el.getAttribute(`data-${lang}`) || el.placeholder;
+          } else if (el.tagName === "H1") {
+            // Allow HTML inside h1 (span)
+            el.innerHTML = el.getAttribute(`data-${lang}`) || el.innerHTML;
+          } else {
+            el.textContent = el.getAttribute(`data-${lang}`) || el.textContent;
+          }
+        });
+      }
+
+      langBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          langBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          setLang(btn.dataset.lang);
+        });
+      });
+
+      // Default language
+      setLang("en");
+    })();
+
+    // =======================================
+// ✅ YATYTECH - Entrance Animations (Reveal)
+// - Excluye: clients logos, icon animations, product-card, timeline-item
+// =======================================
+(function () {
+  const SELECTORS = [
+    // Services
+    "#services .services-header",
+    "#services .service-card",
+
+    // Products (solo header / labels, NO cards porque ya tienes show)
+    "#products .products-header",
+
+    // About
+    "#about .about-header",
+    "#about .about-content",
+    "#about .about-metrics",
+    "#about .about-timeline", // la caja general, NO timeline-item (ya tiene show)
+
+    // FAQ
+    "#faq .faq-header",
+    "#faq .faq-item",
+
+    // Contact
+    "#contact .contact-glass",
+
+    // Footer
+    "footer .footer-brand",
+    "footer .footer-col",
+    "footer .footer-bottom"
+  ];
+
+  const targets = Array.from(document.querySelectorAll(SELECTORS.join(",")));
+
+  // ✅ Filtros: no tocar animaciones existentes ni clients logos
+  const filtered = targets.filter(el => {
+    if (el.closest(".clients")) return false; // no animar toda la sección clients
+    if (el.matches(".clients-logos img")) return false; // explícito
+    if (el.classList.contains("product-card")) return false; // ya tiene show
+    if (el.classList.contains("timeline-item")) return false; // ya tiene show
+    return true;
+  });
+
+  // Asignar clases + stagger
+  filtered.forEach((el, i) => {
+    // FAQ items y columnas footer con efecto soft
+    const soft =
+      el.matches("#faq .faq-item") ||
+      el.matches("footer .footer-col") ||
+      el.matches("footer .footer-brand");
+
+    el.classList.add(soft ? "yt-reveal-soft" : "yt-reveal");
+
+    // stagger ligero (se ve pro)
+    el.style.transitionDelay = `${Math.min(i * 55, 320)}ms`;
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("yt-inview");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -10% 0px"
+    }
+  );
+
+  filtered.forEach(el => observer.observe(el));
+})();

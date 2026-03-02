@@ -1679,3 +1679,51 @@ section {
   }
 }
 
+/* =======================================
+   ✅ YATYTECH - REVEAL ON SCROLL (PREMIUM)
+   - NO afecta clients logos
+   - NO afecta icon-wrapper hover
+======================================= */
+
+.yt-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(6px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+.yt-reveal.yt-inview {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Variantes más sutiles para listas */
+.yt-reveal-soft {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.yt-reveal-soft.yt-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .yt-reveal,
+  .yt-reveal-soft {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
