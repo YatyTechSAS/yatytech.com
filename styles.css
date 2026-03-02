@@ -57,24 +57,25 @@ body {
 
 .brand {
   font-size: 18px;
-  font-weight: 700; /* logo fuerte */
+  font-weight: 700;
   letter-spacing: -0.3px;
   color: #ff7a18;
 }
 
 .brand2 {
   color: #0b2c5d;
-  font-weight: 700; /* misma fuerza que brand */
+  font-weight: 700;
 }
 
 /* =========================
-   LINKS DESKTOP
+   LINKS (DESKTOP BASE)
 ========================= */
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 28px;
+  align-items: center;
 }
 
 .nav-links li {
@@ -84,7 +85,7 @@ body {
 .nav-links a {
   text-decoration: none;
   font-size: 14.5px;
-  font-weight: 500; /* links */
+  font-weight: 500;
   color: #0b2c5d;
   transition: all 0.3s ease;
   display: inline-block;
@@ -98,7 +99,7 @@ body {
 
 /* Activo */
 .nav-links li.active a {
-  font-weight: 600; /* activo */
+  font-weight: 600;
 }
 
 /* Punto activo */
@@ -115,6 +116,72 @@ body {
 }
 
 /* =========================
+   RIGHT SIDE (IDIOMA + CTA + HAMBURGER)
+========================= */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* =========================
+   LANGUAGE SWITCH (UNO SOLO)
+========================= */
+
+.lang-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* Glow muy sutil en hover */
+.lang-switch:hover {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Botones */
+.lang-btn {
+  position: relative;
+  z-index: 2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  letter-spacing: 0.5px;
+}
+
+/* Hover elegante */
+.lang-btn:hover {
+  color: #0f172a;
+}
+
+/* Activo estilo SaaS */
+.lang-btn.active {
+  color: #0f172a;
+  font-weight: 600;
+  background: white;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+/* Separador invisible (solo mantiene estructura) */
+.lang-separator {
+  display: none;
+}
+
+/* =========================
    BOTÓN DESKTOP
 ========================= */
 
@@ -125,7 +192,7 @@ body {
   border-radius: 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600; /* CTA */
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
@@ -167,7 +234,7 @@ body {
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE (MOBILE)
 ========================= */
 
 @media (max-width: 900px) {
@@ -175,14 +242,7 @@ body {
     padding: 12px 24px;
   }
 
-  .desktop-only {
-    display: none;
-  }
-
-  .mobile-only {
-    display: block;
-  }
-
+  /* Logo más compacto */
   .nav-logo img {
     width: 50px;
   }
@@ -191,7 +251,20 @@ body {
     font-size: 16px;
   }
 
-  /* MENU MOBILE */
+  /* En mobile: mostramos hamburger, ocultamos CTA desktop */
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menú desplegable */
   .nav-links {
     position: fixed;
     top: 72px;
@@ -202,27 +275,37 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 24px;
     transition: right 0.35s ease;
   }
 
-  /* CUANDO SE ABRE */
   .nav-links.open {
     right: 0;
   }
 
+  /* Links mobile (no negrilla por defecto) */
   .nav-links a {
     font-size: 18px;
-    font-weight: 500; /* en mobile se lee mejor un poco más fuerte */
+    font-weight: 500;
+    transform: none;
   }
 
-  /* Botón dentro del menú mobile */
+  .nav-links a:hover {
+    transform: none;
+  }
+
+  /* Activo en mobile: más oscuro + más peso */
+  .nav-links li.active a {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* Contact dentro del menú */
   .mobile-contact {
     display: block;
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
-  /* 🔥 CORRECCIÓN DE ESPECIFICIDAD */
   .nav-links .nav-btn-mobile {
     background: #ff7a18;
     color: white;
@@ -235,8 +318,18 @@ body {
 
   .nav-links .nav-btn-mobile:hover {
     color: white;
-    transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255, 122, 24, 0.2);
+  }
+
+  /* Selector de idioma en mobile:
+     queda arriba, al lado del hamburger, en la barra sticky */
+  .lang-switch {
+    padding: 6px 10px;
+  }
+
+  .lang-btn,
+  .lang-separator {
+    font-size: 14px;
   }
 }
 

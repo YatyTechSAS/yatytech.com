@@ -18,22 +18,34 @@
 
 <body>
   <nav class="navbar">
-    <div class="nav-logo">
-      <img src="img/logo.jpg" alt="YatyTech logo" />
-      <span class="brand"> Yaty<span class="brand2">Tech</span> </span>
+
+  <!-- LOGO -->
+  <div class="nav-logo">
+    <img src="img/logo.jpg" alt="YatyTech logo" />
+    <span class="brand">Yaty<span class="brand2">Tech</span></span>
+  </div>
+
+  <!-- LINKS -->
+  <ul class="nav-links">
+    <li class="active"><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+
+    <!-- Contact en móvil (dentro del menú) -->
+    <li class="mobile-contact">
+      <a href="#contact" class="nav-btn-mobile">Contact Us</a>
+    </li>
+  </ul>
+
+  <!-- RIGHT SIDE (DESKTOP y MOBILE) -->
+  <div class="nav-right">
+    <!-- Selector idioma (UNO SOLO) -->
+    <div class="lang-switch" aria-label="Language selector">
+      <button type="button" class="lang-btn active">EN</button>
+      <span class="lang-separator">/</span>
+      <button type="button" class="lang-btn">ES</button>
     </div>
-
-    <ul class="nav-links">
-      <li class="active"><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#about">About</a></li>
-
-      <!-- Contact en móvil -->
-      <li class="mobile-contact">
-        <a href="#contact" class="nav-btn-mobile">Contact Us</a>
-      </li>
-    </ul>
 
     <!-- Botón desktop -->
     <a href="#contact" class="nav-btn desktop-only">Contact Us</a>
@@ -42,7 +54,9 @@
     <div class="hamburger mobile-only">
       <span class="material-symbols-outlined">menu</span>
     </div>
-  </nav>
+  </div>
+
+</nav>
 
   <!-- SECCIONES -->
   <section id="home" class="hero">
