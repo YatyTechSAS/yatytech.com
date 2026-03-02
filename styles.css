@@ -213,7 +213,7 @@ body {
 
   .nav-links a {
     font-size: 18px;
-    font-weight: 600; /* en mobile se lee mejor un poco más fuerte */
+    font-weight: 500; /* en mobile se lee mejor un poco más fuerte */
   }
 
   /* Botón dentro del menú mobile */
@@ -1585,3 +1585,4 @@ section {
     height: 26px;
   }
 }
+

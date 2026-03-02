@@ -30,31 +30,29 @@ hamburger.addEventListener("click", () => {
    - Así evitamos que se borre el "active" al entrar en secciones
      que no tienen link en el navbar.
 ========================================================= */
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      // Solo actuamos cuando la sección está visible
       if (!entry.isIntersecting) return;
 
-      // Si la sección no tiene id, no hay forma de mapearla al menú
       const id = entry.target.id;
       if (!id) return;
 
-      // Buscamos el link del menú que apunte a esa sección
       const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
       if (!activeLink) return;
 
-      // Quitamos el active anterior...
       navItems.forEach((li) => li.classList.remove("active"));
-      // ...y activamos el <li> que contiene el link encontrado
       activeLink.parentElement.classList.add("active");
     });
   },
-  // threshold: % mínimo visible para considerar “activa” la sección
-  { threshold: 0.6 },
+  {
+    // "ventana" central: cuando una sección pasa por el centro del viewport, se activa
+    rootMargin: "-45% 0px -45% 0px",
+    threshold: 0,
+  }
 );
 
-// Observamos todas las secciones para activar/desactivar links del navbar
 sections.forEach((section) => observer.observe(section));
 
 /* =========================================================
