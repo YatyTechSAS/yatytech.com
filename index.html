@@ -4,16 +4,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YatyTech</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
 
+  <title>YatyTech</title>
+  <meta name="description" content="YatyTech desarrolla software a medida: desarrollo web, automatización y soluciones empresariales escalables." />
+
+  <!-- ✅ CSS (solo una vez) -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- ✅ Preconnect Fonts (reduce latencia) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ✅ Poppins: carga no bloqueante + swap -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    />
+  </noscript>
+
+  <!-- ✅ Material Symbols: también no bloqueante -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+    />
+  </noscript>
+
+  <!-- ✅ Lucide: NO bloquear render (defer) -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- ✅ Tu JS: siempre defer -->
+  <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -400,9 +436,7 @@
       <p>© 2026 YatyTech. All rights reverved</p>
     </div>
   </footer>
-
-  <!-- JS -->
-  <script src="main.js"></script>
+  
 </body>
 
 </html>
