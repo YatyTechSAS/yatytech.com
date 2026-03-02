@@ -1,8 +1,18 @@
+/* =========================
+   TIPOGRAFÍA (SISTEMA YATYTECH)
+   - Base: 400
+   - Énfasis leve / links: 500
+   - Títulos sección / cards / botones: 600
+   - Logo / activos: 700
+   - Hero principal: 800
+========================= */
+
+/* RESET + TIPOGRAFÍA GLOBAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins Medium", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -11,6 +21,7 @@ html {
 
 body {
   background: #fff;
+  font-weight : 500; /* base */
 }
 
 /* =========================
@@ -46,12 +57,14 @@ body {
 
 .brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 700; /* logo fuerte */
+  letter-spacing: -0.3px;
   color: #ff7a18;
 }
 
 .brand2 {
   color: #0b2c5d;
+  font-weight: 700; /* misma fuerza que brand */
 }
 
 /* =========================
@@ -71,7 +84,7 @@ body {
 .nav-links a {
   text-decoration: none;
   font-size: 14.5px;
-  font-weight: 500;
+  font-weight: 500; /* links */
   color: #0b2c5d;
   transition: all 0.3s ease;
   display: inline-block;
@@ -85,7 +98,7 @@ body {
 
 /* Activo */
 .nav-links li.active a {
-  font-weight: 700;
+  font-weight: 600; /* activo */
 }
 
 /* Punto activo */
@@ -112,7 +125,7 @@ body {
   border-radius: 24px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 600; /* CTA */
   transition: all 0.3s ease;
 }
 
@@ -200,6 +213,7 @@ body {
 
   .nav-links a {
     font-size: 18px;
+    font-weight: 600; /* en mobile se lee mejor un poco más fuerte */
   }
 
   /* Botón dentro del menú mobile */
@@ -231,7 +245,7 @@ body {
   min-height: 100vh;
   padding: 120px 48px;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 700; /* títulos grandes genéricos */
   color: #0b2c5d;
 }
 
@@ -239,7 +253,7 @@ section {
   scroll-margin-top: 90px;
 }
 
-/* HERO */
+/* HERO (primera definición base) */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -262,6 +276,7 @@ section {
   line-height: 1.2;
   margin-bottom: 20px;
   color: #0f172a;
+  font-weight: 600; /* HERO FUERTE (como tu imagen 1) */
 }
 
 .hero-text h1 span {
@@ -273,6 +288,7 @@ section {
   color: #475569;
   max-width: 520px;
   margin-bottom: 35px;
+  font-weight: 500; /* párrafo hero con presencia */
 }
 
 /* BUTTONS */
@@ -287,7 +303,7 @@ section {
   color: #ffffff;
   padding: 14px 28px;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 600; /* CTA */
   text-decoration: none;
   transition: 0.3s ease;
 }
@@ -301,7 +317,7 @@ section {
   color: #ffffff;
   padding: 14px 28px;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 600; /* CTA */
   text-decoration: none;
   transition: 0.3s ease;
 }
@@ -335,7 +351,8 @@ section {
     justify-content: center;
   }
 }
-/* HERO VIDEO BACKGROUND */
+
+/* HERO VIDEO BACKGROUND (segunda definición; mantiene tu video) */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -418,6 +435,7 @@ section {
     transform: none;
   }
 }
+
 /* ================= CLIENTS STRIP PREMIUM ================= */
 
 .clients {
@@ -433,6 +451,7 @@ section {
   text-transform: uppercase;
   color: #94a3b8;
   margin-bottom: 60px;
+  font-weight: 500; /* label */
 }
 
 .clients-logos {
@@ -478,12 +497,14 @@ section {
   font-size: 2.4rem;
   margin-bottom: 14px;
   color: #0b2c5d;
+  font-weight: 600; /* título de sección */
 }
 
 .services-header p {
   color: #64748b;
   margin-bottom: 80px;
   font-size: 1.05rem;
+  font-weight: 500; /* texto base */
 }
 
 /* GRID */
@@ -513,11 +534,7 @@ section {
   position: absolute;
   width: 200px;
   height: 200px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 122, 24, 0.15),
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(255, 122, 24, 0.15), transparent 70%);
   top: -60px;
   right: -60px;
   transition: 0.4s ease;
@@ -550,9 +567,7 @@ section {
 /* ================= ICON HOVER PREMIUM EFFECT ================= */
 
 .icon-wrapper {
-  transition:
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
   position: relative;
   z-index: 1;
 }
@@ -563,15 +578,9 @@ section {
   position: absolute;
   inset: -8px;
   border-radius: 22px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 122, 24, 0.35),
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(255, 122, 24, 0.35), transparent 70%);
   opacity: 0;
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
   z-index: -1;
 }
 
@@ -596,12 +605,14 @@ section {
   margin-bottom: 16px;
   font-size: 1.3rem;
   color: #0b2c5d;
+  font-weight: 600; /* títulos de card */
 }
 
 .service-card p {
   font-size: 0.98rem;
   color: #64748b;
   line-height: 1.7;
+  font-weight: 500; /* texto base */
 }
 
 /* RESPONSIVE */
@@ -631,7 +642,6 @@ section {
 }
 
 /* HEADER */
-
 .products-header {
   text-align: center;
   margin-bottom: 80px;
@@ -643,17 +653,16 @@ section {
   text-transform: uppercase;
   color: #f97316; /* naranja marca */
   margin-bottom: 20px;
-  font-weight: 600;
+  font-weight: 600; /* label */
 }
 
 .products-header h2 {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 600; /* título sección */
   color: #0f172a;
 }
 
 /* GRID */
-
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -661,7 +670,6 @@ section {
 }
 
 /* CARD */
-
 .product-card {
   position: relative;
   padding: 50px;
@@ -682,17 +690,20 @@ section {
 .product-card:hover {
   transform: translateY(-10px);
   border: 1px solid #f97316;
-  box-shadow: 0 20px 40px rgba(249,115,22,0.08);
+  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.08);
 }
 
 /* Glow sutil naranja */
-
 .product-card::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 24px;
-  background: radial-gradient(circle at top left, rgba(249,115,22,0.08), transparent 60%);
+  background: radial-gradient(
+    circle at top left,
+    rgba(249, 115, 22, 0.08),
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -703,27 +714,26 @@ section {
 }
 
 /* TITULO */
-
 .product-card h3 {
   font-size: 1.6rem;
   margin-bottom: 20px;
   color: #0f172a;
+  font-weight: 600; /* título card */
 }
 
 /* DESCRIPCIÓN */
-
 .product-card p {
   color: #64748b;
   line-height: 1.6;
   margin-bottom: 30px;
+  font-weight: 500; /* texto base */
 }
 
 /* LINK */
-
 .product-link {
   text-decoration: none;
   color: #f97316;
-  font-weight: 600;
+  font-weight: 500; /* link destacado leve */
   transition: all 0.3s ease;
 }
 
@@ -738,17 +748,17 @@ section {
   width: 60px;
   height: 60px;
   border-radius: 16px;
-  background: rgba(249,115,22,0.08);
+  background: rgba(249, 115, 22, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  border: 1px solid rgba(249,115,22,0.2);
+  border: 1px solid rgba(249, 115, 22, 0.2);
   transition: all 0.3s ease;
 }
 
 .product-card:hover .product-icon {
-  background: rgba(249,115,22,0.15);
+  background: rgba(249, 115, 22, 0.15);
   border: 1px solid #f97316;
 }
 
@@ -806,13 +816,13 @@ section {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #f97316;
-  font-weight: 600;
+  font-weight: 600; /* label */
   margin-bottom: 20px;
 }
 
 .about-header h2 {
   font-size: 2.3rem;
-  font-weight: 600;
+  font-weight: 600; /* título sección */
   color: #0f172a;
 }
 
@@ -827,10 +837,10 @@ section {
   color: #64748b;
   line-height: 1.7;
   font-size: 1.1rem;
+  font-weight : 500; /* texto base */
 }
 
 /* PILLARS */
-
 .about-pillars {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -842,14 +852,16 @@ section {
   font-size: 1.2rem;
   margin-bottom: 15px;
   color: #0f172a;
+  font-weight: 600; /* títulos */
 }
 
 .pillar p {
   color: #64748b;
   line-height: 1.6;
+  font-weight : 500;
 }
 
-/* ================= METRICS ================= */
+/* ================= METRICS (primera versión, se sobreescribe luego) ================= */
 
 .about-metrics {
   display: grid;
@@ -863,11 +875,13 @@ section {
   font-size: 2.2rem;
   color: #f97316;
   margin-bottom: 10px;
+  font-weight: 600; /* números con fuerza */
 }
 
 .metric p {
   color: #64748b;
   font-size: 0.95rem;
+  font-weight : 500;
 }
 
 /* ================= TIMELINE ================= */
@@ -885,7 +899,7 @@ section {
   left: 50%;
   width: 2px;
   height: 100%;
-  background: rgba(249,115,22,0.2);
+  background: rgba(249, 115, 22, 0.2);
   transform: translateX(-50%);
 }
 
@@ -907,7 +921,7 @@ section {
 
 .timeline-year {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 600; /* label */
   color: #f97316;
   margin-bottom: 10px;
 }
@@ -915,12 +929,11 @@ section {
 .timeline-item p {
   color: #64748b;
   font-size: 0.95rem;
+  font-weight : 500;
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 768px) {
-
   .about-timeline::before {
     left: 0;
   }
@@ -933,11 +946,12 @@ section {
     margin-bottom: 40px;
   }
 }
-/* ================= ABOUT ================= */
+
+/* ================= ABOUT (duplicado en tu archivo original; se conserva) ================= */
 
 .about {
   padding: 120px 8%;
-  background: #f8fafc; /* ligero contraste con blanco */
+  background: #f8fafc;
   color: #1e293b;
 }
 
@@ -977,10 +991,10 @@ section {
   color: #64748b;
   line-height: 1.7;
   font-size: 1.1rem;
+  font-weight : 500;
 }
 
 /* PILLARS */
-
 .about-pillars {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -992,11 +1006,13 @@ section {
   font-size: 1.2rem;
   margin-bottom: 15px;
   color: #0f172a;
+  font-weight: 600;
 }
 
 .pillar p {
   color: #64748b;
   line-height: 1.6;
+  font-weight : 500;
 }
 
 /* ================= METRICS HORIZONTAL ================= */
@@ -1026,9 +1042,8 @@ section {
 .metric p {
   color: #64748b;
   font-size: 0.95rem;
+  font-weight : 500;
 }
-
-
 
 /* ================= TIMELINE ANIMATION ================= */
 
@@ -1043,10 +1058,7 @@ section {
   transform: translateY(0);
 }
 
-
-
 /* Punto del timeline */
-
 .timeline-item::before {
   content: "";
   position: absolute;
@@ -1056,11 +1068,10 @@ section {
   height: 14px;
   background: #f97316;
   border-radius: 50%;
-  box-shadow: 0 0 0 6px rgba(249,115,22,0.1);
+  box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.1);
 }
 
 /* Responsive */
-
 @media (max-width: 768px) {
   .about-metrics {
     flex-direction: column;
@@ -1090,11 +1101,13 @@ section {
   font-size: 32px;
   color: #0f172a;
   margin-bottom: 15px;
+  font-weight: 600; /* título sección */
 }
 
 .faq-header p {
   color: #64748b;
   font-size: 15px;
+  font-weight : 500;
 }
 
 /* ITEM */
@@ -1110,7 +1123,7 @@ section {
   text-align: left;
   padding: 22px 0;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 600; /* pregunta */
   color: #0f172a;
   display: flex;
   justify-content: space-between;
@@ -1140,6 +1153,7 @@ section {
   font-size: 14px;
   color: #475569;
   line-height: 1.6;
+  font-weight : 500;
 }
 
 /* ACTIVE STATE */
@@ -1157,7 +1171,7 @@ section {
 /* ===== SECTION ===== */
 .contact {
   padding: 120px 20px;
-  background: #F5F7FA; /* gris azulito suave */
+  background: #f5f7fa; /* gris azulito suave */
   display: flex;
   justify-content: center;
 }
@@ -1182,9 +1196,7 @@ section {
 
   border: 1px solid rgba(255, 255, 255, 0.9);
 
-  box-shadow:
-    0 20px 60px rgba(37, 99, 235, 0.08),
-    0 8px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08), 0 8px 30px rgba(0, 0, 0, 0.05);
 
   transition: all 0.4s ease;
 }
@@ -1192,23 +1204,22 @@ section {
 /* Hover ultra sutil */
 .contact-glass:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 30px 80px rgba(37, 99, 235, 0.12),
-    0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 30px 80px rgba(37, 99, 235, 0.12), 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== HEADER ===== */
 .contact-header h2 {
   font-size: 2.2rem;
-  font-weight: 600;
-  color: #0F172A;
+  font-weight: 600; /* título sección */
+  color: #0f172a;
   margin-bottom: 10px;
 }
 
 .contact-header p {
-  color: #64748B;
+  color: #64748b;
   margin-bottom: 40px;
   font-size: 0.95rem;
+  font-weight : 500;
 }
 
 /* ===== INPUTS FLOATING LABEL ===== */
@@ -1222,11 +1233,12 @@ section {
   width: 100%;
   padding: 18px 16px;
   border-radius: 14px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #e2e8f0;
   background: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
   outline: none;
   transition: all 0.3s ease;
+  font-weight : 500;
 }
 
 .input-group input:focus,
@@ -1240,11 +1252,12 @@ section {
   position: absolute;
   left: 16px;
   top: 18px;
-  color: #94A3B8;
+  color: #94a3b8;
   font-size: 0.9rem;
   pointer-events: none;
   transition: 0.3s ease;
   background: transparent;
+  font-weight: 500;
 }
 
 /* Floating effect */
@@ -1256,7 +1269,7 @@ section {
   left: 12px;
   font-size: 0.75rem;
   color: #ff7a18;
-  background: #F5F7FA;
+  background: #f5f7fa;
   padding: 0 6px;
   border-radius: 6px;
 }
@@ -1267,7 +1280,7 @@ section {
   padding: 16px;
   border-radius: 16px;
   border: none;
-  font-weight: 500;
+  font-weight: 600; /* CTA */
   font-size: 0.95rem;
   cursor: pointer;
 
@@ -1283,7 +1296,6 @@ section {
   box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
 }
 
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -1294,10 +1306,6 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-
-
 
 /* FOOTER */
 .footer {
@@ -1319,18 +1327,20 @@ section {
 .footer-logo {
   font-size: 22px;
   margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .footer-brand p {
   font-size: 14px;
   color: #9a9a9a;
   line-height: 1.7;
+  font-weight : 500;
 }
 
 /* COLUMNAS */
 .footer-col h4 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 600; /* títulos */
   margin-bottom: 20px;
   color: #9a9a9a;
 }
@@ -1347,6 +1357,7 @@ section {
   text-decoration: none;
   color: #000;
   font-size: 14px;
+  font-weight : 500; /* links */
 }
 
 .footer-col a:hover {
@@ -1367,13 +1378,14 @@ section {
   font-size: 14px;
   outline: none;
   width: 100%;
+  font-weight : 500;
 }
 
 .newsletter button {
   border: none;
   background: none;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 600; /* acción */
   cursor: pointer;
 }
 
@@ -1388,6 +1400,7 @@ section {
 .footer-bottom p {
   font-size: 13px;
   color: #000;
+  font-weight: 500;
 }
 
 /* RESPONSIVE */
@@ -1421,8 +1434,7 @@ section {
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow:
-    0 10px 30px rgba(37, 211, 102, 0.35),
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2000;
@@ -1436,17 +1448,14 @@ section {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(37, 211, 102, 0.4), transparent 70%);
   opacity: 0;
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
   z-index: -1;
 }
 
 /* Hover premium */
 .whatsapp-float:hover {
   transform: translateY(-6px) scale(1.08);
-  box-shadow:
-    0 18px 45px rgba(37, 211, 102, 0.5),
+  box-shadow: 0 18px 45px rgba(37, 211, 102, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.15) inset;
 }
 
