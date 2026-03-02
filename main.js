@@ -15,23 +15,25 @@ hamburger.addEventListener("click", () => {
 });
 
 /* =========================
-   SCROLL ACTIVE LINK
+   SCROLL ACTIVE LINK 
 ========================= */
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navItems.forEach((li) => li.classList.remove("active"));
+      if (!entry.isIntersecting) return;
 
-        const activeLink = document.querySelector(
-          `.nav-links a[href="#${entry.target.id}"]`,
-        );
+      // Si la sección no tiene id, no hacemos nada
+      const id = entry.target.id;
+      if (!id) return;
 
-        if (activeLink) {
-          activeLink.parentElement.classList.add("active");
-        }
-      }
+      // Buscamos si existe link para esa sección
+      const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+      if (!activeLink) return;
+
+      // Solo si hay link válido, actualizamos el active
+      navItems.forEach((li) => li.classList.remove("active"));
+      activeLink.parentElement.classList.add("active");
     });
   },
   { threshold: 0.6 },
