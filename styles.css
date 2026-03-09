@@ -1043,7 +1043,6 @@ section {
   overflow: hidden;
 }
 
-/* Patrón de puntos navy sutil */
 .tech-stack::before {
   content: '';
   position: absolute;
@@ -1055,7 +1054,6 @@ section {
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
 }
 
-/* Separador inferior */
 .tech-stack::after {
   content: '';
   position: absolute;
@@ -1132,59 +1130,65 @@ section {
   margin: 0;
 }
 
-/* ── GRID DE TAGS ── */
+/* ── GRID ── */
 .tech-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 16px;
   justify-content: center;
 }
 
-.tech-grid span {
-  display: inline-flex;
+/* ── CARD ── */
+.tech-item {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 10px 22px;
-  border-radius: 999px;
+  gap: 10px;
+  padding: 20px 24px;
+  border-radius: 16px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  color: #475569;
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
+  width: 110px;
   cursor: default;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
 }
 
-/* Shimmer en hover */
-.tech-grid span::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -60%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(249,115,22,0.08), transparent);
-  transition: left 0.5s ease;
-  pointer-events: none;
+.tech-item:hover {
+  background: rgba(249,115,22,0.06);
+  border-color: rgba(249,115,22,0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(249,115,22,0.10);
 }
 
-.tech-grid span:hover {
-  background: rgba(249,115,22,0.07);
-  border-color: rgba(249,115,22,0.4);
+.tech-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover img {
+  transform: scale(1.12);
+}
+
+.tech-item span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease;
+}
+
+.tech-item:hover span {
   color: #f97316;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(249,115,22,0.10);
-}
-
-.tech-grid span:hover::before {
-  left: 120%;
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .tech-stack { padding: 100px 6%; }
-  .tech-grid span { font-size: 0.82rem; padding: 8px 18px; }
+  .tech-item  { width: 90px; padding: 16px 18px; }
+  .tech-item img { width: 32px; height: 32px; }
 }
 
 /* =====================================================
