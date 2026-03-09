@@ -812,32 +812,64 @@ section {
   z-index: 2;
 }
 
+/* ── HEADER ── */
 .products-header {
   text-align: center;
   margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-.products-label {
-  font-size: 0.85rem;
-  letter-spacing: 3px;
+/* ── BADGE ── */
+.products-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(249,115,22,0.08);
+  border: 1px solid rgba(249,115,22,0.22);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #f97316;
-  margin-bottom: 20px;
-  font-weight: 600;
 }
 
+.products-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f97316;
+  box-shadow: 0 0 8px rgba(249,115,22,0.6);
+  animation: productsPulse 2s ease-in-out infinite;
+}
+
+@keyframes productsPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.65); }
+}
+
+/* ── TÍTULO ── */
 .products-header h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #0f172a;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #0b2c5d;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin: 0;
 }
 
+/* ── GRID ── */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
 }
 
+/* ── CARDS ── */
 .product-card {
   position: relative;
   padding: 50px;
@@ -845,7 +877,6 @@ section {
   background: #ffffff;
   border: 1px solid #f1f5f9;
   transition: all 0.4s ease;
-
   opacity: 0;
   transform: translateY(40px);
 }
@@ -906,6 +937,7 @@ section {
   letter-spacing: 0.5px;
 }
 
+/* ── ICON ── */
 .product-icon {
   width: 60px;
   height: 60px;
@@ -930,6 +962,7 @@ section {
   stroke: #f97316;
 }
 
+/* ── CANVAS BG ── */
 .products-bg {
   position: absolute;
   inset: 0;
