@@ -442,3 +442,52 @@ window.addEventListener("scroll", revealOnScroll);
 
   filtered.forEach(el => observer.observe(el));
 })();
+
+/* ═══════════════════════════════════════
+   CUSTOM SELECT — JS
+═══════════════════════════════════════ */
+
+document.querySelectorAll('.custom-select').forEach(select => {
+  const trigger  = select.querySelector('.custom-select__trigger');
+  const text     = select.querySelector('.custom-select__text');
+  const options  = select.querySelectorAll('.custom-select__option');
+  const hidden   = select.closest('.custom-select-group').querySelector('.custom-select-value');
+
+  /* Toggle open */
+  trigger.addEventListener('click', () => {
+    const isOpen = select.classList.contains('open');
+    closeAll();
+    if (!isOpen) select.classList.add('open');
+  });
+
+  /* Select option */
+  options.forEach(opt => {
+    opt.addEventListener('click', () => {
+      options.forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+      text.textContent = opt.textContent;
+      text.classList.add('selected');
+      hidden.value = opt.dataset.value;
+      select.classList.remove('open');
+    });
+  });
+
+  /* Keyboard nav */
+  select.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      select.classList.toggle('open');
+    }
+    if (e.key === 'Escape') closeAll();
+  });
+});
+
+/* Close all on outside click */
+function closeAll() {
+  document.querySelectorAll('.custom-select.open').forEach(s => s.classList.remove('open'));
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.custom-select')) closeAll();
+});
+
