@@ -588,7 +588,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-container">
     <div class="contact-glass">
@@ -602,17 +602,17 @@
       <form class="contact-form">
 
         <div class="input-group">
-          <input type="text" placeholder=" " required />
+          <input type="text" name="name" placeholder=" " required />
           <label data-en="Name" data-es="Nombre">Name</label>
         </div>
 
         <div class="input-group">
-          <input type="email" placeholder=" " required />
+          <input type="email" name="email" placeholder=" " required />
           <label data-en="Email" data-es="Email">Email</label>
         </div>
 
         <div class="input-group">
-          <input type="text" placeholder=" " />
+          <input type="text" name="company" placeholder=" " />
           <label data-en="Company (optional)" data-es="Empresa (opcional)">Company (optional)</label>
         </div>
 
@@ -621,7 +621,7 @@
           <label class="phone-label" data-en="Phone (optional)" data-es="Teléfono (opcional)">
             Phone (optional)
           </label>
-          <input type="tel" id="phone-input" autocomplete="tel" />
+          <input type="tel" id="phone-input" name="phone" autocomplete="tel" />
         </div>
 
         <!-- Custom dropdown -->
@@ -648,7 +648,7 @@
         </div>
 
         <div class="input-group">
-          <textarea rows="4" placeholder=" " required></textarea>
+          <textarea name="message" rows="4" placeholder=" " required></textarea>
           <label data-en="Tell us about your project" data-es="Cuéntanos sobre tu proyecto">
             Tell us about your project
           </label>
