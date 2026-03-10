@@ -408,3 +408,21 @@ function closeAll() {
 document.addEventListener('click', e => {
   if (!e.target.closest('.custom-select')) closeAll();
 });
+
+/* =========================================================
+   INTL TEL INPUT
+========================================================= */
+const phoneInputEl = document.querySelector("#phone-input");
+if (phoneInputEl) {
+  window.iti = intlTelInput(phoneInputEl, {
+    initialCountry: "auto",
+    geoIpLookup: cb =>
+      fetch("https://ipapi.co/json")
+        .then(r => r.json())
+        .then(d => cb(d.country_code))
+        .catch(() => cb("us")),
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+    preferredCountries: ["us", "co", "mx", "es"],
+    separateDialCode: true,
+  });
+}

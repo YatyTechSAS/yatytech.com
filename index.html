@@ -40,13 +40,17 @@
 
   <!-- ✅ Your JS -->
   <script src="main.js" defer></script>
+  <script src="form.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
   <nav class="navbar">
     <!-- LOGO -->
     <div class="nav-logo">
-      <img src="img/logo.jpg" alt="YatyTech logo" />
+      <img src="img/logo.png" alt="YatyTech logo" />
       <span class="brand">Yaty<span class="brand2">Tech</span></span>
     </div>
 
@@ -590,71 +594,79 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="contact-container">
-      <div class="contact-glass">
-        <div class="contact-header">
-          <h2 data-en="Let's talk." data-es="Hablemos.">Let's talk.</h2>
-          <p data-en="Let's build something extraordinary together." data-es="Construyamos algo extraordinario juntos.">
-            Let's build something extraordinary together.
-          </p>
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="contact-glass">
+      <div class="contact-header">
+        <h2 data-en="Let's talk." data-es="Hablemos.">Let's talk.</h2>
+        <p data-en="Let's build something extraordinary together." data-es="Construyamos algo extraordinario juntos.">
+          Let's build something extraordinary together.
+        </p>
+      </div>
+
+      <form class="contact-form">
+
+        <div class="input-group">
+          <input type="text" placeholder=" " required />
+          <label data-en="Name" data-es="Nombre">Name</label>
         </div>
 
-        <form class="contact-form">
+        <div class="input-group">
+          <input type="email" placeholder=" " required />
+          <label data-en="Email" data-es="Email">Email</label>
+        </div>
 
-          <div class="input-group">
-            <input type="text" required />
-            <label data-en="Name" data-es="Nombre">Name</label>
-          </div>
+        <div class="input-group">
+          <input type="text" placeholder=" " />
+          <label data-en="Company (optional)" data-es="Empresa (opcional)">Company (optional)</label>
+        </div>
 
-          <div class="input-group">
-            <input type="email" required />
-            <label data-en="Email" data-es="Email">Email</label>
-          </div>
+        <!-- Teléfono con intl-tel-input -->
+        <div class="input-group phone-group">
+          <label class="phone-label" data-en="Phone (optional)" data-es="Teléfono (opcional)">
+            Phone (optional)
+          </label>
+          <input type="tel" id="phone-input" autocomplete="tel" />
+        </div>
 
-          <div class="input-group">
-            <input type="text" />
-            <label data-en="Company (optional)" data-es="Empresa (opcional)">Company (optional)</label>
-          </div>
+        <!-- Custom dropdown -->
+        <div class="input-group custom-select-group">
+          <input type="hidden" name="project_type" class="custom-select-value" required />
 
-          <!-- Custom dropdown — reemplaza el <select> nativo -->
-          <div class="input-group custom-select-group">
-            <input type="hidden" name="project_type" class="custom-select-value" required />
-
-            <div class="custom-select" tabindex="0">
-              <div class="custom-select__trigger">
-                <span class="custom-select__text" data-en="Project type" data-es="Tipo de proyecto">Project type</span>
-                <svg class="custom-select__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </div>
-
-              <ul class="custom-select__options">
-                <li class="custom-select__option" data-value="software">Software Development</li>
-                <li class="custom-select__option" data-value="data">Data Engineering</li>
-                <li class="custom-select__option" data-value="ai">Artificial Intelligence</li>
-                <li class="custom-select__option" data-value="automation">Automation</li>
-                <li class="custom-select__option" data-value="other">Other</li>
-              </ul>
+          <div class="custom-select" tabindex="0">
+            <div class="custom-select__trigger">
+              <span class="custom-select__text" data-en="Project type" data-es="Tipo de proyecto">Project type</span>
+              <svg class="custom-select__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </div>
+
+            <ul class="custom-select__options">
+              <li class="custom-select__option" data-value="software">Software Development</li>
+              <li class="custom-select__option" data-value="data">Data Engineering</li>
+              <li class="custom-select__option" data-value="ai">Artificial Intelligence</li>
+              <li class="custom-select__option" data-value="automation">Automation</li>
+              <li class="custom-select__option" data-value="other">Other</li>
+            </ul>
           </div>
+        </div>
 
-          <div class="input-group">
-            <textarea rows="4" required></textarea>
-            <label data-en="Tell us about your project" data-es="Cuéntanos sobre tu proyecto">
-              Tell us about your project
-            </label>
-          </div>
+        <div class="input-group">
+          <textarea rows="4" placeholder=" " required></textarea>
+          <label data-en="Tell us about your project" data-es="Cuéntanos sobre tu proyecto">
+            Tell us about your project
+          </label>
+        </div>
 
-          <button type="submit" class="btn-premium" data-en="Send message" data-es="Enviar mensaje">
-            Send message
-          </button>
+        <button type="submit" class="btn-premium" data-en="Send message" data-es="Enviar mensaje">
+          Send message
+        </button>
 
-        </form>
-      </div>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer class="footer">
