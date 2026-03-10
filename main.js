@@ -1,11 +1,11 @@
 /* =========================================================
    DOM SELECTORS
 ========================================================= */
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-links li");
-const navLinks = document.querySelector(".nav-links");
+const sections  = document.querySelectorAll("section");
+const navItems  = document.querySelectorAll(".nav-links li");
+const navLinks  = document.querySelector(".nav-links");
 const hamburger = document.querySelector(".hamburger");
-const icon = document.querySelector(".hamburger .material-symbols-outlined");
+const icon      = document.querySelector(".hamburger .material-symbols-outlined");
 
 /* =========================================================
    HAMBURGER TOGGLE
@@ -22,21 +22,15 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-
       const id = entry.target.id;
       if (!id) return;
-
       const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
       if (!activeLink) return;
-
       navItems.forEach((li) => li.classList.remove("active"));
       activeLink.parentElement.classList.add("active");
     });
   },
-  {
-    rootMargin: "-45% 0px -45% 0px",
-    threshold: 0,
-  }
+  { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
 );
 
 sections.forEach((section) => observer.observe(section));
@@ -61,9 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add("show");
-          }, index * 200);
+          setTimeout(() => entry.target.classList.add("show"), index * 200);
           logosObserver.unobserve(entry.target);
         }
       });
@@ -84,9 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add("show");
-          }, index * 200);
+          setTimeout(() => entry.target.classList.add("show"), index * 200);
           cardsObserver.unobserve(entry.target);
         }
       });
@@ -106,13 +96,13 @@ lucide.createIcons();
    NETWORK BACKGROUND (CANVAS PARTICLES)
 ========================================================= */
 const canvas = document.getElementById("networkCanvas");
-const ctx = canvas.getContext("2d");
+const ctx    = canvas.getContext("2d");
 
 let particles = [];
 const particleCount = 60;
 
 function resizeCanvas() {
-  canvas.width = canvas.offsetWidth;
+  canvas.width  = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 }
 resizeCanvas();
@@ -120,19 +110,17 @@ window.addEventListener("resize", resizeCanvas);
 
 class Particle {
   constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
+    this.x  = Math.random() * canvas.width;
+    this.y  = Math.random() * canvas.height;
     this.vx = (Math.random() - 0.5) * 0.5;
     this.vy = (Math.random() - 0.5) * 0.5;
   }
-
   update() {
     this.x += this.vx;
     this.y += this.vy;
-    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+    if (this.x < 0 || this.x > canvas.width)  this.vx *= -1;
     if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
   }
-
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
@@ -144,14 +132,12 @@ class Particle {
 function connectParticles() {
   for (let a = 0; a < particles.length; a++) {
     for (let b = a; b < particles.length; b++) {
-      let dx = particles[a].x - particles[b].x;
-      let dy = particles[a].y - particles[b].y;
-      let distance = dx * dx + dy * dy;
-
-      if (distance < 12000) {
+      const dx = particles[a].x - particles[b].x;
+      const dy = particles[a].y - particles[b].y;
+      if (dx * dx + dy * dy < 12000) {
         ctx.beginPath();
         ctx.strokeStyle = "rgba(249,115,22,0.15)";
-        ctx.lineWidth = 1;
+        ctx.lineWidth   = 1;
         ctx.moveTo(particles[a].x, particles[a].y);
         ctx.lineTo(particles[b].x, particles[b].y);
         ctx.stroke();
@@ -162,17 +148,12 @@ function connectParticles() {
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach((p) => {
-    p.update();
-    p.draw();
-  });
+  particles.forEach((p) => { p.update(); p.draw(); });
   connectParticles();
   requestAnimationFrame(animate);
 }
 
-for (let i = 0; i < particleCount; i++) {
-  particles.push(new Particle());
-}
+for (let i = 0; i < particleCount; i++) particles.push(new Particle());
 animate();
 
 /* =========================================================
@@ -184,9 +165,8 @@ const counterObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-
       const counter = entry.target;
-      const target = +counter.getAttribute("data-target");
+      const target  = +counter.getAttribute("data-target");
       let count = 0;
 
       const updateCounter = () => {
@@ -221,9 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         const i = [...timelineItems].indexOf(entry.target);
-        setTimeout(() => {
-          entry.target.classList.add("show");
-        }, i * 150);
+        setTimeout(() => entry.target.classList.add("show"), i * 150);
         timelineObserver.unobserve(entry.target);
       });
     },
@@ -238,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
 ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".faq-item").forEach((item) => {
-    // Inyecta la barra lateral si no existe
     if (!item.querySelector(".faq-item-bar")) {
       const bar = document.createElement("div");
       bar.className = "faq-item-bar";
@@ -250,11 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     button.addEventListener("click", () => {
       const isActive = item.classList.contains("active");
-      // Cierra todos
       document.querySelectorAll(".faq-item.active").forEach((i) =>
         i.classList.remove("active")
       );
-      // Abre el clickeado si estaba cerrado
       if (!isActive) item.classList.add("active");
     });
   });
@@ -267,9 +242,7 @@ const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
   reveals.forEach((el) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 80) {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
       el.classList.add("active");
     }
   });
@@ -281,12 +254,12 @@ window.addEventListener("scroll", revealOnScroll);
    LANGUAGE SWITCHER
 ========================================================= */
 (function () {
-  const root = document.documentElement;
+  const root     = document.documentElement;
   const langBtns = document.querySelectorAll(".lang-btn");
 
   function setLang(lang) {
     root.setAttribute("data-lang", lang);
-    document.querySelectorAll("[data-en]").forEach(el => {
+    document.querySelectorAll("[data-en]").forEach((el) => {
       if (el.tagName === "INPUT" && el.hasAttribute("placeholder")) {
         el.placeholder = el.getAttribute(`data-${lang}`) || el.placeholder;
       } else if (el.tagName === "TEXTAREA" && el.hasAttribute("placeholder")) {
@@ -299,9 +272,9 @@ window.addEventListener("scroll", revealOnScroll);
     });
   }
 
-  langBtns.forEach(btn => {
+  langBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      langBtns.forEach(b => b.classList.remove("active"));
+      langBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       setLang(btn.dataset.lang);
     });
@@ -327,101 +300,98 @@ window.addEventListener("scroll", revealOnScroll);
     "#contact .contact-glass",
     "footer .footer-brand",
     "footer .footer-col",
-    "footer .footer-bottom"
+    "footer .footer-bottom",
   ];
 
-  const targets = Array.from(document.querySelectorAll(SELECTORS.join(",")));
-
-  const filtered = targets.filter(el => {
-    if (el.closest(".clients")) return false;
-    if (el.matches(".clients-logos img")) return false;
-    if (el.classList.contains("product-card")) return false;
+  const targets  = Array.from(document.querySelectorAll(SELECTORS.join(",")));
+  const filtered = targets.filter((el) => {
+    if (el.closest(".clients"))             return false;
+    if (el.matches(".clients-logos img"))   return false;
+    if (el.classList.contains("product-card"))  return false;
     if (el.classList.contains("timeline-item")) return false;
     return true;
   });
 
   filtered.forEach((el, i) => {
     const soft =
-      el.matches("footer .footer-col") ||
-      el.matches("footer .footer-brand");
-
+      el.matches("footer .footer-col") || el.matches("footer .footer-brand");
     el.classList.add(soft ? "yt-reveal-soft" : "yt-reveal");
     el.style.transitionDelay = `${Math.min(i * 55, 320)}ms`;
   });
 
   const ytObserver = new IntersectionObserver(
     (entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("yt-inview");
         ytObserver.unobserve(entry.target);
       });
     },
-    {
-      threshold: 0.14,
-      rootMargin: "0px 0px -10% 0px"
-    }
+    { threshold: 0.14, rootMargin: "0px 0px -10% 0px" }
   );
 
-  filtered.forEach(el => ytObserver.observe(el));
+  filtered.forEach((el) => ytObserver.observe(el));
 })();
 
 /* =========================================================
    CUSTOM SELECT
 ========================================================= */
-document.querySelectorAll('.custom-select').forEach(select => {
-  const trigger = select.querySelector('.custom-select__trigger');
-  const text    = select.querySelector('.custom-select__text');
-  const options = select.querySelectorAll('.custom-select__option');
-  const hidden  = select.closest('.custom-select-group').querySelector('.custom-select-value');
+document.querySelectorAll(".custom-select").forEach((select) => {
+  const trigger = select.querySelector(".custom-select__trigger");
+  const text    = select.querySelector(".custom-select__text");
+  const options = select.querySelectorAll(".custom-select__option");
+  const hidden  = select.closest(".custom-select-group").querySelector(".custom-select-value");
 
-  trigger.addEventListener('click', () => {
-    const isOpen = select.classList.contains('open');
+  trigger.addEventListener("click", () => {
+    const isOpen = select.classList.contains("open");
     closeAll();
-    if (!isOpen) select.classList.add('open');
+    if (!isOpen) select.classList.add("open");
   });
 
-  options.forEach(opt => {
-    opt.addEventListener('click', () => {
-      options.forEach(o => o.classList.remove('active'));
-      opt.classList.add('active');
+  options.forEach((opt) => {
+    opt.addEventListener("click", () => {
+      options.forEach((o) => o.classList.remove("active"));
+      opt.classList.add("active");
       text.textContent = opt.textContent;
-      text.classList.add('selected');
+      text.classList.add("selected");
       hidden.value = opt.dataset.value;
-      select.classList.remove('open');
+      select.classList.remove("open");
     });
   });
 
-  select.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
+  select.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      select.classList.toggle('open');
+      select.classList.toggle("open");
     }
-    if (e.key === 'Escape') closeAll();
+    if (e.key === "Escape") closeAll();
   });
 });
 
 function closeAll() {
-  document.querySelectorAll('.custom-select.open').forEach(s => s.classList.remove('open'));
+  document.querySelectorAll(".custom-select.open").forEach((s) =>
+    s.classList.remove("open")
+  );
 }
 
-document.addEventListener('click', e => {
-  if (!e.target.closest('.custom-select')) closeAll();
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".custom-select")) closeAll();
 });
 
 /* =========================================================
    INTL TEL INPUT
 ========================================================= */
-const phoneInputEl = document.querySelector("#phone-input");
-if (phoneInputEl) {
-  window.iti = intlTelInput(phoneInputEl, {
+const phoneEl = document.querySelector("#phone-input");
+if (phoneEl) {
+  window.iti = intlTelInput(phoneEl, {
     initialCountry: "auto",
-    geoIpLookup: cb =>
+    geoIpLookup: (cb) =>
       fetch("https://ipapi.co/json")
-        .then(r => r.json())
-        .then(d => cb(d.country_code))
+        .then((r) => r.json())
+        .then((d) => cb(d.country_code))
         .catch(() => cb("us")),
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
     preferredCountries: ["us", "co", "mx", "es"],
     separateDialCode: true,
   });
