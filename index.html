@@ -7,19 +7,17 @@
   <meta name="theme-color" content="#ffffff" />
   <meta name="color-scheme" content="light" />
 
-
   <title>YatyTech</title>
   <meta name="description"
     content="YatyTech develops custom software: web development, automation, and scalable enterprise solutions." />
 
-  <!-- ✅ CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
 
-  <!-- ✅ Preconnect Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <!-- ✅ Poppins: non-blocking + swap -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     onload="this.onload=null;this.rel='stylesheet'" />
@@ -27,23 +25,20 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" />
   </noscript>
-
-  <!-- ✅ Material Symbols: non-blocking -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
     onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
   </noscript>
 
-  <!-- ✅ Lucide -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-
-  <!-- ✅ Your JS -->
-  <script src="main.js" defer></script>
-  <script src="form.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+  <!-- 1. Librerías externas — sin defer, se cargan primero -->
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- 2. Tus scripts — defer para que esperen el DOM -->
+  <script src="main.js" defer></script>
+  <script src="form.js" defer></script>
 </head>
 
 <body>
