@@ -2599,3 +2599,69 @@ section {
   .services::before { background-size: 24px 24px; }
   .contact::before  { background-size: 30px 30px; }
 }
+
+/* ── FIELD STATES ── */
+.input-group.has-error input,
+.input-group.has-error textarea,
+.phone-group.has-error #phone-input,
+.custom-select-group.has-error .custom-select {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
+}
+
+.input-group.has-success input,
+.input-group.has-success textarea,
+.phone-group.has-success #phone-input {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.07);
+}
+
+.input-group.has-error label,
+.input-group.has-error .phone-label {
+  color: #ef4444;
+}
+
+.input-group.has-success label,
+.phone-group.has-success .phone-label {
+  color: #22c55e;
+}
+
+.field-hint {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #ef4444;
+  margin-top: 5px;
+  padding-left: 4px;
+  min-height: 14px;
+}
+
+/* ── BTN STATES ── */
+.btn-premium.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-premium.loading::after {
+  width: 30%;
+  animation: btn-progress 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes btn-progress {
+  from { width: 10%; left: 0; }
+  to   { width: 60%; left: 30%; }
+}
+
+.btn-premium.success {
+  background: #16a34a;
+  cursor: default;
+}
+
+.btn-premium.success::after {
+  width: 100%;
+  background: rgba(255,255,255,0.2);
+}
+
+.btn-premium.btn-error {
+  background: #ef4444;
+}
