@@ -1,15 +1,6 @@
 /* =========================================================
    CONTACT FORM — SUPABASE INTEGRATION
 ========================================================= */
-/* ─── DEBUG — quita esto cuando funcione ─── */
-console.log("form:",         document.querySelector(".contact-form"));
-console.log("nameInput:",    document.querySelector('input[name="name"]'));
-console.log("emailInput:",   document.querySelector('input[name="email"]'));
-console.log("companyInput:", document.querySelector('input[name="company"]'));
-console.log("phoneField:",   document.querySelector("#phone-input"));
-console.log("selectValue:",  document.querySelector(".custom-select-value"));
-console.log("textarea:",     document.querySelector("textarea"));
-console.log("submitBtn:",    document.querySelector(".btn-premium"));
 
 /* ─── CONFIG ─────────────────────────────────────────── */
 const SUPABASE_URL  = "https://aewgojhoszzcbcjzarvm.supabase.co";
