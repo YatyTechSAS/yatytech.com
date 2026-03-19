@@ -260,14 +260,18 @@ window.addEventListener("scroll", revealOnScroll);
   function setLang(lang) {
     root.setAttribute("data-lang", lang);
     document.querySelectorAll("[data-en]").forEach((el) => {
+      const val = el.getAttribute(`data-${lang}`);
+      if (!val) return;
       if (el.tagName === "INPUT" && el.hasAttribute("placeholder")) {
-        el.placeholder = el.getAttribute(`data-${lang}`) || el.placeholder;
+        el.placeholder = val;
       } else if (el.tagName === "TEXTAREA" && el.hasAttribute("placeholder")) {
-        el.placeholder = el.getAttribute(`data-${lang}`) || el.placeholder;
+        el.placeholder = val;
       } else if (el.tagName === "H1") {
-        el.innerHTML = el.getAttribute(`data-${lang}`) || el.innerHTML;
+        el.innerHTML = val;
+      } else if (el.children.length > 0) {
+        return;
       } else {
-        el.textContent = el.getAttribute(`data-${lang}`) || el.textContent;
+        el.textContent = val;
       }
     });
   }
