@@ -2390,8 +2390,8 @@ section {
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  opacity: 1 !important;  /* 👈 esto */
-  color: #000 !important; /* 👈 y esto */
+  opacity: 1 !important;  
+  color: #000 !important; 
 }
 
 .footer-bottom {
