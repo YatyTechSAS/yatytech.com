@@ -2383,6 +2383,17 @@ section {
   cursor: pointer;
 }
 
+.newsletter button {
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  opacity: 1 !important;  /* 👈 esto */
+  color: #000 !important; /* 👈 y esto */
+}
+
 .footer-bottom {
   max-width: 1200px;
   margin: 40px auto 0;
