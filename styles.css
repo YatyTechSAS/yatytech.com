@@ -2298,6 +2298,7 @@ section {
   padding: 80px 48px 40px;
   border-top: 1px solid #eee;
   position: relative;
+  overflow: hidden;
 }
 
 /* Línea tricolor superior */
@@ -2308,7 +2309,6 @@ section {
   height: 3px;
   background: linear-gradient(90deg, transparent 0%, #f97316 30%, #0b2c5d 70%, transparent 100%);
   opacity: 0.6;
-  overflow: hidden;
 }
 
 .footer-container {

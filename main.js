@@ -335,6 +335,14 @@ window.addEventListener("scroll", revealOnScroll);
   );
 
   filtered.forEach((el) => ytObserver.observe(el));
+
+  setTimeout(() => {
+    filtered.forEach((el) => {
+      if (!el.classList.contains("yt-inview")) {
+        el.classList.add("yt-inview");
+      }
+    });
+  }, 2500);
 })();
 
 /* =========================================================
