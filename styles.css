@@ -2362,6 +2362,7 @@ section {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-wrap: wrap; /* 👈 permite que el botón baje si no cabe */
 }
 
 .newsletter input {
@@ -2370,7 +2371,8 @@ section {
   padding: 6px 0;
   font-size: 14px;
   outline: none;
-  width: 100%;
+  flex: 1;          /* 👈 reemplaza width: 100% */
+  min-width: 180px; /* 👈 evita que se encoja demasiado */
   font-weight: 500;
 }
 
@@ -2380,6 +2382,7 @@ section {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap; /* 👈 evita que el texto del botón se parta */
 }
 
 .footer-bottom {
